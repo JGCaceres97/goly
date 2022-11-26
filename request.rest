@@ -1,0 +1,32 @@
+@HOST = localhost
+@PORT = 3000
+
+### GetAll
+GET http://{{HOST}}:{{PORT}}/goly
+
+### GetById
+GET http://{{HOST}}:{{PORT}}/goly/2
+
+### CreateGoly
+POST http://{{HOST}}:{{PORT}}/goly
+Content-Type: application/json
+
+{
+  "goly": "",
+  "redirect": "https://www.google.com",
+  "isRandom": true
+}
+
+### UpdateGoly
+PUT http://{{HOST}}:{{PORT}}/goly
+Content-Type: application/json
+
+{
+  "id": 3,
+  "goly": "go-is-the-best",
+  "redirect": "https://golang.org",
+  "isRandom": false
+}
+
+### Redirect
+GET http://{{HOST}}:{{PORT}}/r/go-is-the-best
